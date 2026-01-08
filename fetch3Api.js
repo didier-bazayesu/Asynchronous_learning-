@@ -1,14 +1,20 @@
-let array = ['https://jsonplaceholder.typicode.com/users',
-'https://jsonplaceholder.typicode.com/posts',
-'https://jsonplaceholder.typicode.com/comments'
-]
+// let array = ['https://jsonplaceholder.typicode.com/users',
+// 'https://jsonplaceholder.typicode.com/posts',
+// 'https://jsonplaceholder.typicode.com/comments'
+// ]
 
-async function fetchApi(arr){
-    arr.forEach(async (url) => {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-    })
-}
+// async function fetchApi(arr){
+//     arr.forEach(async (url) => {
+//         const response = await fetch(url);
+//         const data = await response.json();
+//         console.log(data);
+//     })
+// }
 
-fetchApi(array);
+// fetchApi(array);
+
+const api = 'https://jsonplaceholder.typicode.com/users';
+const data = fetch(api);
+data.then(response => response.json())
+.then(ele=>console.log(ele));
+
