@@ -32,5 +32,5 @@ function fetchUserData(userId) {
 }
 
 // Example usage:
-fetchUserData(1)
+fetchUserData(5)
 
