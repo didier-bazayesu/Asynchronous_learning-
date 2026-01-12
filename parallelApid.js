@@ -1,11 +1,18 @@
-const results = await Promise.allSettled(
-    urls.map(url => fetch(url).then(res => res.json()))
-);
-
-results.forEach((result, index) => {
-    if (result.status === 'fulfilled') {
-        console.log(`API ${index + 1} success`, result.value);
-    } else {
-        console.error(`API ${index + 1} failed`, result.reason);
+function fetchDataWithCallback(url,callback){
+    try{
+      fetch(url).then(response => {
+        if(!response.ok){
+          console.log("there is no data fetched");
+        }else {
+           return response.json();
+        }
+      }).then(data=> {
+        console.log("data fetched success", data);
+      }).catch(error=>  console.log(error));
+    }catch(erro){
+         console.error(erro);
     }
-});
+
+
+}
+console.log(fetchDataWithCallback('https://jsonplaceholder.typicode.com/users'));
