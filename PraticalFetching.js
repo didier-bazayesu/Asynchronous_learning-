@@ -20,14 +20,14 @@ async function PraticalFetching() {
              //returning post
              console.log("Post:")
              result.forEach(element=> {
-                console.log(element.title);
+                console.log("-",element.title);
              })
             
              console.log('\n');
         });
     
     
-       await Promise.all(response);
+       await Promise.allSettled(response);
 
     }catch(error){
         console.error(error);
