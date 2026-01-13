@@ -1,27 +1,42 @@
 
 async function fetchingParallelApiSimiltaneously() {
    try{
-       const user = await fetch('https://jsonplaceholder.typicode.com/users');
-       const userDetails = await user.json();
+//        const user = await fetch('https://jsonplaceholder.typicode.com/users');
+//        const userDetails = await user.json();
    
    
-       //fetching the comment 
+//        //fetching the comment 
    
-       const post = await fetch("https://jsonplaceholder.typicode.com/posts")
-        const postDetails = await post.json();
+//        const post = await fetch("https://jsonplaceholder.typicode.com/posts")
+//         const postDetails = await post.json();
    
    
-        //fetching comments 
+//         //fetching comments 
    
-       const comment = await fetch("https://jsonplaceholder.typicode.com/comments");
-       const commentDetais = await comment.json();
+//        const comment = await fetch("https://jsonplaceholder.typicode.com/comments");
+//        const commentDetais = await comment.json();
    
-       return await Promise.all([userDetails,postDetails,commentDetais]);
+//        return await Promise.all([userDetails,postDetails,commentDetais]);
+let[fetchUser , fetchPost , fetchComment ]= await Promise.all([
+    fetch("https://jsonplaceholder.typicode.com/users"),
+    fetch("https://jsonplaceholder.typicode.com/posts"),
+    fetch("https://jsonplaceholder.typicode.com/comments")
+
+])
+let[respUser , respPost , respComment]= await Promise.all([
+      fetchUser.json(),
+      fetchPost.json(),
+      fetchComment.json()
+
+])
+
+return [respUser,respPost,respComment];
 
    }catch(error){
     console.error(error);
    }
-}
+
+ }
 
 
 fetchingParallelApiSimiltaneously().then(([user,comment,result])=>{
