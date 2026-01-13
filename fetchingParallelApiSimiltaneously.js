@@ -43,5 +43,6 @@ fetchingParallelApiSimiltaneously().then(([user,comment,result])=>{
     console.log(`commentuser:${user.length>=1 ? user.length : "No data fetched"}`);
     console.log(`commentLength:${comment.length>=1 ? comment.length :"No data fetched" }`);
     console.log(`commentLength:${result.length>=1 ? result.length : "No data fetched"}`);
+    console.log("handle different data");
     
 });
