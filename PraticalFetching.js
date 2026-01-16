@@ -9,6 +9,7 @@ async function PraticalFetching() {
             throw new Error("there something behind");
         }
         let response = await data.json();
+        console.time('fetched');
     
         response.forEach(async element => {
            
@@ -19,14 +20,14 @@ async function PraticalFetching() {
     
              //returning post
              console.log("Post:")
-             result.forEach(element=> {
+              result.forEach(element=> {
                 console.log("-",element.title);
              })
             
              console.log('\n');
         });
     
-    
+    console.timeEnd("fetched")
        await Promise.allSettled(response);
 
     }catch(error){
