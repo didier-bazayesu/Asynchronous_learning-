@@ -17,11 +17,16 @@ import axios from "axios";
 const api = 'https://jsonplaceholder.typicode.com/users';
 
 
-async function handleFetch(params) {
-
+export async function handleFetch(params) {
+try{
     const data = await axios.get(params);
+    console.log(data)
 
-    console.log(data.data)
+    return data.data;
+
+}catch(error){
+    console.error(error);
+}
 
 }
 
