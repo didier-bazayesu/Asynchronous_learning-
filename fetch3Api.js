@@ -12,14 +12,19 @@
 // }
 
 // fetchApi(array);
+import axios from "axios";
 
 const api = 'https://jsonplaceholder.typicode.com/users';
-const data = fetch(api);
-data.then(response => response.json())
-.then(ele=>console.log(ele));
 
-let data1 = Promise.resolve('Hello world');
-let data2 = Promise.reject('Error');
-let data3 = Promise.resolve('Hello world');     
+
+async function handleFetch(params) {
+
+    const data = await axios.get(params);
+
+    console.log(data.data)
+
+}
+
+handleFetch(api)
 
 
