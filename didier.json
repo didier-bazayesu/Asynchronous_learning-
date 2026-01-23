@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "brinda system",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 2,
+        "name": "system sylvere",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 3,
+        "name": "byiringiro aime",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 4,
+        "name": "berwa kellia",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 5,
+        "name": "iradukunda system",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 6,
+        "name": "iratuzi dutuze naome",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 7,
+        "name": "brinda system",
+        "location": "muhanga",
+        "school": "kigali"
+    },
+    {
+        "id": 8,
+        "name": "brinda system",
+        "location": "muhanga",
+        "school": "kigali"
+    }
+]
