@@ -1,8 +1,16 @@
-let array = [];
+function fibonacci(n) {
+    if(n <=1 ) return n;
+   let a = 0 ; let b = 1 
+   let arr = [];
 
-for (let i = 0; i < 10; i++) {
-    let star = "*".repeat(2 * i + 1);
-    let space = " ".repeat(10-i-1)
-    array.push(space+star);
+   for(let i=2 ; i<=n; i++){
+    let next = a +b ;
+    a = b;
+    b = next
+    arr.push(b)
+   }
+   console.log(arr);
+return b;
 }
-console.log(array.join("\n"))
+console.log(fibonacci(100/3))
+
