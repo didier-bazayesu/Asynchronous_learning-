@@ -33,13 +33,23 @@
 
 
 
-async function getState(promise) {
+// async function getState(promise) {
 
-    const data = await Promise.allSettled([promise]);
-    if (data.status == 'fulfilled') return "fulfilled";
-    if (data.status == "rejected") return "rejected";
-    else return "Pending"
+//     const data = await Promise.allSettled([promise]);
+//     if (data.status == 'fulfilled') return "fulfilled";
+//     if (data.status == "rejected") return "rejected";
+//     else return "Pending"
 
-}
+// }
 
-getState("https://jsonplaceholder.typicode.com/users/3").then(console.log)
+// getState("https://jsonplaceholder.typicode.com/users/3").then(console.log)
+const data = Promise.allSettled([
+    Promise.then(()=> {
+      return "fullfilled"
+    }, ()=> {
+        return "rejected"
+    })
+
+])
+
+console.log(data);
