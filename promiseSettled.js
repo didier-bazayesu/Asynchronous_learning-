@@ -1,23 +1,18 @@
-function makeTrackedPromise(promise) {
-    let isSettled = false;
 
-    const wrapped = promise.then(
-        (value) => {
-            isSettled = true;
-            return value;
-        },
-        (err) => {
-            isSettled = true;
-            throw err;
-        }
-    );
+function promiseSettled() {
+ return new Promise((resolve)=>{
+    let data = 1 ;
+    let array = [];
+    let interval = setInterval(()=>{
+        console.log(data);
+        array.push(data)
+        data++;
+    },1000)  
 
-    wrapped.isSettled = () => isSettled;
-    return wrapped;
+    setTimeout(()=>{
+           clearInterval(interval);
+           resolve(array)
+    },6000)
+ })
 }
-
-// Usage
-const p = makeTrackedPromise(fetch("https://jsonplaceholder.typicode.com/users"));
-
-console.log(p.isSettled()); // false
-p.then(() => console.log("Now settled:", p.isSettled()));
+promiseSettled().then(console.log);
