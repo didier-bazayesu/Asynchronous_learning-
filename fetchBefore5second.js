@@ -1,5 +1,7 @@
 async function fetching_before_5_second(){
     const controller = new AbortController();
+    const xhr = new XMLHttpRequest();
+  
     const signal = controller.signal;
     setTimeout(()=>{
          controller.abort()
