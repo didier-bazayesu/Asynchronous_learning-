@@ -1,5 +1,5 @@
 async function usePromiseRace(){
-    const response = await Promise.any([
+    const response = await Promise.race([
         fetch("https://jsonplaceholder.typicode.com/posts") ,
         fetch("https://dummyjson.com/posts"),
         fetch("https://this-may-not-exist.com/posts")]);
